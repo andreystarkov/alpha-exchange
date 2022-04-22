@@ -2,11 +2,19 @@ import styled from 'styled-components'
 import { colors } from '../../theme/colors'
 
 export const Input = styled.input`
-  padding: 10px;
   background-color: ${colors.white};
   color: #111;
-  width: 100%;
   outline: 0;
+  border: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
   border-radius: 10px;
   margin-bottom: 30px;
+  font-size: 25px;
+`
+
+export const Label = styled.p`
+  margin-bottom: 10px;
+  color: ${colors.darkGray};
+  font-size: 24px;
 `

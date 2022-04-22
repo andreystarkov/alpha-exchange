@@ -8,7 +8,14 @@ export const Button = styled.div`
   padding: ${rem('10px')};
   border-radius: ${rem('10px')};
   text-align: center;
+  outline: 0;
+  border: 0;
   color: ${colors.white};
   font-size: ${rem('25px')};
   font-weight: 600;
+  transition: 0.35s linear all;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 `
