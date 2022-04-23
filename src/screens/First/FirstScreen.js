@@ -8,7 +8,7 @@ function FirstScreen () {
   const [ payValue, setPayValue ] = useState('')
   const [ isFormValid, setisFormValid ] = useState(false)
   // if (payValue.length > 5) alert('lol')
-  console.log({ isFormValid, payValue })
+  //console.log({ isFormValid, payValue })
   return (
     <Container>
       <Input
@@ -16,6 +16,22 @@ function FirstScreen () {
         label="You pay"
         onChange={value => setPayValue(value)}
         value={payValue} />
+      <img src = {images.arrowImg}/>
+      <Input
+        currencyIcon={images.btcIcon}
+        label="You get"
+        onChange={value => setPayValue(value)}
+        value={payValue} />
+      <Input
+        label="To address"
+        onChange={value => setPayValue(value)}
+        value={payValue} />
+      <Input
+        currencyIcon={images.walletImg}
+        label="Your card Number"
+        onChange={value => setPayValue(value)}
+        value={payValue} />
+
       <Button
         disabled={isFormValid}
         onClick={() => setisFormValid(!isFormValid)}>Exchange</Button>
