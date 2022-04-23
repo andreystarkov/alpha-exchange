@@ -18,3 +18,7 @@ export const Label = styled.p`
   color: ${colors.darkGray};
   font-size: 24px;
 `
+
+export const InputContainer = styled.div`
+  display: block;
+`

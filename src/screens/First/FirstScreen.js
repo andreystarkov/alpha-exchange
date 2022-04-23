@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '../../components/Button'
 import { Container } from '../../components/Container'
 import Input from '../../components/Input'
+import images from '../../images'
 
 function FirstScreen () {
   const [ payValue, setPayValue ] = useState('')
@@ -11,6 +12,7 @@ function FirstScreen () {
   return (
     <Container>
       <Input
+        currencyIcon={images.usdIcon}
         label="You pay"
         onChange={value => setPayValue(value)}
         value={payValue} />

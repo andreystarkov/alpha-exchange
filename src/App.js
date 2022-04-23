@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import './App.css'
-import FirstScreen from './screens/First'
-import SecondScreen from './screens/Second'
-import ThirdScreen from './screens/Trird'
+
+import { FirstScreen, SecondScreen, ThirdScreen } from './screens'
+
 import styled from 'styled-components'
 
 import { Button } from './components/Button'

@@ -1,15 +1,18 @@
 import React from 'react'
 
-import { Input, Label } from './InputStyles'
+import { Input, Label, InputContainer } from './InputStyles'
 
-function InputComponent ({ onChange, value, label }) {
+function InputComponent ({ currencyIcon, onChange, value, label }) {
   return (
   <div>
     {label && <Label>{label}</Label>}
-    <Input
-        type="text"
-        onChange={e => onChange(e.target.value)}
-        value={value} />
+    <InputContainer>
+      {currencyIcon && <img src={currencyIcon.default} alt=".." />}
+      <Input
+          type="text"
+          onChange={e => onChange(e.target.value)}
+          value={value} />
+    </InputContainer>
   </div>
   )
 }
