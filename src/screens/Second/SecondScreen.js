@@ -9,10 +9,13 @@ function SecondScreen () {
   // if (payValue.length > 5) alert('lol'§)
   return (
     <Container>
-      <Input onChange={value => setPayValue(value)} value={payValue} />
+      <Input
+        label="E-Mail"
+        onChange={value => setPayValue(value)}
+        value={payValue} />
       <Button
-        disabled={isFormValid} 
-        onClick={() => setisFormValid(!isFormValid)}>Exchange</Button>
+        disabled={isFormValid}
+        onClick={() => setisFormValid(!isFormValid)}>Confirm Exchange</Button>
     </Container>
   )
 }
