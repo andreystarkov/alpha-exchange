@@ -5,7 +5,7 @@ import { rem } from 'polished'
 
 export const Button = styled.div`
   background-color: ${(props) => props.disabled ? colors.grey : colors.green};
-  padding: ${rem('10px')};
+  padding: 13px 60px;
   border-radius: ${rem('10px')};
   text-align: center;
   outline: 0;
