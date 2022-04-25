@@ -12,7 +12,11 @@ import Agreement from '../../components/Agreement'
 function FirstScreen () {
   const [ payValue, setPayValue ] = useState('')
   const [ isFormValid, setisFormValid ] = useState(false)
-  const [ isAgreement, setIsAgreement ] = useState(false)
+  const [ getValue, setGetValue ] = useState('')
+  const [ toAddress, setToAddress ] = useState('')
+  const [ cardNumber, setCardNumber ] = useState('')
+  const [ isAgreement, setIsAgreement ] = useState('')
+  
   // if (payValue.length > 5) alert('lol')
   //console.log({ isFormValid, payValue })
   return (
@@ -27,22 +31,23 @@ function FirstScreen () {
       <Input
         currencyIcon={images.btcIcon}
         label="You get"
-        onChange={value => setPayValue(value)}
-        value={payValue} />
+        onChange={value => setGetValue(value)}
+        value={getValue} />
       <Input
         label="To address"
-        onChange={value => setPayValue(value)}
-        value={payValue} />
+        onChange={value => setToAddress(value)}
+        value={toAddress} />
       <Input
         currencyIcon={images.walletIcon}
         label="Your card Number"
-        onChange={value => setPayValue(value)}
-        value={payValue} />
+        onChange={value => setCardNumber(value)}
+        value={cardNumber} />
       {/* <Agreement
         currencyIcon={images.emptyCheck}
         label="Agree with our" /> */}
       <Checkmark
         onClick={() => setIsAgreement(!isAgreement)}
+        currencyIcon={images.checkmarkIcon} 
         label='Ты пидор?'
         checked={isAgreement}
         />
