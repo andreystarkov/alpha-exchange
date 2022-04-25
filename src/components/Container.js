@@ -10,4 +10,5 @@ export const Container = styled.div`
   background-color: ${colors.lightGray};
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
   flex-direction: column;
+  position: relative;
 `
