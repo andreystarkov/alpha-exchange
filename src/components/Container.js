@@ -5,10 +5,11 @@ import { rem } from 'polished'
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  width: ${rem('425px')};
-  padding: ${rem('20px')};
+  width: ${rem('375px')};
+  padding: ${rem('50px')};
+  padding-top: 40px;
   background-color: ${colors.lightGray};
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
-  flex-direction: column; 
+  flex-direction: column;
+  border-radius: 15px;
 `
