@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import './App.css'
 
-import { FirstScreen, SecondScreen, ThirdScreen } from './screens'
+import { FirstScreen, SecondScreen, ThirdScreen, FourthScreen } from './screens'
 
 import styled from 'styled-components'
 
@@ -46,10 +46,12 @@ function App () {
         <SwitchButton disabled={activeScreen !== 1} onClick={() => setActive(1)}>First</SwitchButton>
         <SwitchButton disabled={activeScreen !== 2} onClick={() => setActive(2)}>Second</SwitchButton>
         <SwitchButton disabled={activeScreen !== 3} onClick={() => setActive(3)}>Third</SwitchButton>
+        <SwitchButton disabled={activeScreen !== 4} onClick={() => setActive(4)}>Fourth</SwitchButton>
       </ButtonsContainer>
       {activeScreen === 1 && <FirstScreen />}
       {activeScreen === 2 && <SecondScreen />}
       {activeScreen === 3 && <ThirdScreen />}
+      {activeScreen === 4 && <FourthScreen />}
     </RootContainer>
   );
 }

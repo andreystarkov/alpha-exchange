@@ -6,7 +6,7 @@ export const images = {
     walletIcon: require('./icons/wallet.svg'),
     emptyCheck: require('./icons/emptyCheck.svg'),
     dotIcon: require('./icons/dot.svg'),
-    crossIcon: require('./icons/denial.svg'),
+    crossIcon: require('./icons/cross.svg'),
     arrow: require('./icons/arrow.svg'),
 }
 

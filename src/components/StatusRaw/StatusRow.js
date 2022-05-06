@@ -1,5 +1,5 @@
 import React from 'react'
-import {StatusText, StatusContainer, StatusCheckMark, Circle } from './StatusRowStyles'
+import {StatusText, StatusContainer, StatusCheckMark } from './StatusRowStyles'
 import images from '../../images'
 
 
