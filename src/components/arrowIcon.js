@@ -9,16 +9,16 @@ export const ArrowIcon = styled.div`
     width: 35.71px;
     height: 21.01px;
     right: 50px;
-    top: 200px;
+    top: 170px;
     /* transform: rotate(90deg); */
 
 `
-function ArrowComponent () {
+function ArrowComponent() {
     return (
         <ArrowIcon>
             <img src={images.arrowIcon.default} alt=".." />
         </ArrowIcon>
-        
+
     )
 }
 
