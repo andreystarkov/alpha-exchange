@@ -33,8 +33,8 @@ export const StatusCheckMark = styled.div`
     align-items: center;
     transition: 0.4s linear all;
     > img {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
 `
 

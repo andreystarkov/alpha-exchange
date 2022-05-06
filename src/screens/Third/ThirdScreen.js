@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Rings } from  'react-loader-spinner'
-
 import { Button } from '../../components/Button'
 import { Container } from '../../components/Container'
 import styled from 'styled-components'
