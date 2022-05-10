@@ -49,6 +49,7 @@ function FirstScreen () {
         onClick={() => setIsAgreement(!isAgreement)}
         currencyIcon={images.checkmarkIcon} 
         label='Ты пидор?'
+        LinkText = 'Да'
         checked={isAgreement}
         />
 

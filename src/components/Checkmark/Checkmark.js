@@ -32,13 +32,18 @@ export const Label = styled.p`
 `
 
 
-function Checkmark ({ checked, label, onClick, currencyIcon }) {
+function Checkmark ({ checked, label, onClick, currencyIcon, LinkText }) {
   return (
     <Container onClick={onClick}>
       <Circle checked={checked}>
         {currencyIcon && <img src={images.checkmarkIcon.default} alt=".." />}
       </Circle>
-      <Label>{label}</Label>
+      <Label>
+        {label}
+        <a href="mystyle.css" >
+          {LinkText}
+        </a>
+      </Label>
     </Container>
   )
 }
