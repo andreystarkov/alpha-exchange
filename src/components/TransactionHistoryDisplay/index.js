@@ -1,0 +1,2 @@
+import TransactionHistoryDisplay from './TransactionHistoryDisplay'
+export default TransactionHistoryDisplay
