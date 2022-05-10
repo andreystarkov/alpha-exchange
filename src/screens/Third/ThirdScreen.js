@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Rings } from  'react-loader-spinner'
 import { Button } from '../../components/Button'
 import { Container } from '../../components/Container'
@@ -35,10 +35,8 @@ const MiddleContainer = styled.div`
 
 
 function ThirdScreen () {
-  const [ payValue, setPayValue ] = useState('')
   const [ isFormValid, setisFormValid ] = useState(false)
 
-  // if (payValue.length > 5) alert('lol')
   return (
     <Container>
       <HeaderText>Your exchange in progress</HeaderText>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from '../../components/Button'
 import { Container } from '../../components/Container'
-import Input from '../../components/Input'
+import InputComponent from '../../components/Input'
 import images from '../../images'
 import styled from 'styled-components'
 import CurrencyInfo from '../../components/CurrencyInfo'
+import { feautureTransactions } from './FeautureTransactionsData'
 
 
 
@@ -45,28 +46,37 @@ margin-top: 9px;
 margin-left: 11px;
 `
 
-function SecondScreen () {
-  const [ payValue, setPayValue ] = useState('')
-  const [ isFormValid, setisFormValid ] = useState(false)
-  // if (payValue.length > 5) alert('lol'§)
+function emailValidation (email){
+  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if(!email || regex.test(email) === false){
+      return false;
+  }
+  return true;
+}
 
-  console.log({ })
+function SecondScreen () {
+  const [ emailValue, setEmailValue ] = useState('')
+  const isValidEmail = emailValidation(emailValue)
+
+  console.log({isValidEmail, emailValue  })
   return (
     <Container>
-        <Input
+        <InputComponent
           label="Your E-Mail"
-          onChange={value => setPayValue(value)}
-          value={payValue} />
+          onChange={value => setEmailValue(value)}
+          value={emailValue} />
         <UnderEmail> We will never spam you </UnderEmail>
-        <CurrencyInfo label={'You take'} currencyIcon = {images.usdIcon} amount ={'50'}/>
-        <ArrowIcon src={images.arrow.default} alt=".." />
-        <CurrencyInfo label={'You get'} currencyIcon = {images.usdIcon} amount ={'0.0012'}/>
-        <FeeAmount>  Network fee:  0.000023 </FeeAmount>
-        <Adress> To adress: </Adress> 
-        <AdressNumber> 3BBGhNBNNZA2tpjvpusjq54895...szDjD </AdressNumber> 
+          <>
+            <CurrencyInfo label={'You give'} currencyIcon = {feautureTransactions.youGive.icon} amount ={feautureTransactions.youGive.amount}/>
+            <ArrowIcon src={images.arrow.default} alt=".." />
+            <CurrencyInfo label={'You get'} currencyIcon = {feautureTransactions.youGet.icon} amount ={feautureTransactions.youGet.amount}/>
+            <FeeAmount>  Network fee:  {feautureTransactions.networkFee} </FeeAmount>
+            <Adress> To adress: </Adress> 
+            <AdressNumber> {feautureTransactions.toAddress} </AdressNumber>
+          </>
       <Button
-        disabled={isFormValid}
-        onClick={() => setisFormValid(!isFormValid)}>Confirm Exchange</Button>
+        disabled={!isValidEmail}
+        onClick={() => {}}>{isValidEmail ? 'Confirm Exchange' : 'Enter a valid E-mail'}</Button>
     </Container>
   )
 }
