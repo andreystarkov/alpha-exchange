@@ -40,7 +40,8 @@ export const Address = styled.span`
   margin-bottom: 10px;
   margin-right: 5px;
 `
-export const AddressNumber = styled.span`
+export const Link = styled.a`
+  text-decoration: none;
   font-size: 16px;
   font-weight: 700;
   color: rgba(78, 77, 77, 1);

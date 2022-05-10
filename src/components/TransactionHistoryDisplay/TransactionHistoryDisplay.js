@@ -1,5 +1,5 @@
 import React from 'react'
-import {AssetInContainer, AssetFromContainer, HistoryStatusStyle, DateTimeStyle, StatusContainer,  ArrowIcon, Address, AddressNumber, AddressContainer, HistoryStatusText} from './TransactionHistoryDisplayStyles'
+import {AssetInContainer, AssetFromContainer, HistoryStatusStyle, DateTimeStyle, StatusContainer,  ArrowIcon, Address, Link, AddressContainer, HistoryStatusText} from './TransactionHistoryDisplayStyles'
 import CurrencyInfo from '../../components/CurrencyInfo'
 import images from '../../images'
 
@@ -18,9 +18,9 @@ return (<AssetInContainer>
 </AssetInContainer>)
 }
 
-function AdressNumber ({wallet}){
+function AdressNumber ({wallet, txHash}){
 return (<AddressContainer><Address> To address: </Address>
-  <AddressNumber> {wallet} </AddressNumber>
+      <Link target="_blank" href={`https://www.blockchain.com/btc/tx/${txHash}`}>{wallet}</Link>
   </AddressContainer>)
 }
 
@@ -35,7 +35,8 @@ function TransactionHistoryDisplay (props) {
         <AssetIn
           txStatus={ props.status }/>
         <AdressNumber
-          wallet = { address.substring(0, 20) + "..." + address.substr(address.length - 3)}/> 
+          txHash={ props.txHash }
+          wallet={ address.substring(0, 20) + "..." + address.substr(address.length - 3)}/> 
     </StatusContainer>
   )
 }
