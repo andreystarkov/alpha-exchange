@@ -2,8 +2,9 @@ import React from 'react'
 
 import { Input, Container, Label, InputContainer } from './InputStyles'
 
-function InputComponent ({ currencyIcon, onChange, value, label }) {
+function InputComponent ({ isNumeric,currencyIcon, onChange, value, label }) {
   return (
+    
   <Container>
     {label && <Label>{label}</Label>}
     <InputContainer>
@@ -12,8 +13,10 @@ function InputComponent ({ currencyIcon, onChange, value, label }) {
           type="text"
           onChange={e => onChange(e.target.value)}
           value={value} />
+          
     </InputContainer>
   </Container>
+  
   )
 }
 
