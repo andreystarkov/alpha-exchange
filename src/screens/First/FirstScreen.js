@@ -5,13 +5,14 @@ import Input  from '../../components/Input'
 import images from '../../images'
 import Arrow from '../../components/arrowIcon'
 import Checkmark from '../../components/Checkmark'
-import Agreement from '../../components/Agreement'
+import {cardNumberValidation} from '../../Utils/cardNumberValidation'
+
 
 
 
 function FirstScreen () {
   const [ payValue, setPayValue ] = useState('')
-  const [ isFormValid, setisFormValid ] = useState(false)
+  // const [ isFormValid, setisFormValid ] = useState(false)
   const [ getValue, setGetValue ] = useState('')
   const [ toAddress, setToAddress ] = useState('')
   const [ cardNumber, setCardNumber ] = useState('')
@@ -19,12 +20,25 @@ function FirstScreen () {
   
   // if (payValue.length > 5) alert('lol')
   //console.log({ isFormValid, payValue })
+
+
+  const isValid = cardNumberValidation(cardNumber) 
+
+ 
+  const isFormValid = isValid && isAgreement
+
+  
+
+  console.log({is: isValid})
+  
   return (
     <Container>
       <Input
         currencyIcon={images.usdIcon}
         label="You pay"
-        onChange={value => setPayValue(value)}
+        onChange={value => {
+          setPayValue(value)
+        }}
         value={payValue} />
       <Arrow/>
       {/* <img src={images.arrowIcon.default}/> */}
@@ -42,6 +56,7 @@ function FirstScreen () {
         label="Your card Number"
         onChange={value => setCardNumber(value)}
         value={cardNumber} />
+        
       {/* <Agreement
         currencyIcon={images.emptyCheck}
         label="Agree with our" /> */}
@@ -54,10 +69,11 @@ function FirstScreen () {
         />
 
       <Button
-        disabled={isFormValid}
-        onClick={() => setisFormValid(!isFormValid)}>Exchange</Button>
+        disabled={!isFormValid}
+        onClick={() => {}}>Exchange</Button>
     </Container>
   )
 }
 
 export default FirstScreen
+
